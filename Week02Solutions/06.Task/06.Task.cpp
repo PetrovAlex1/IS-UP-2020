@@ -1,20 +1,29 @@
-// 06.Task.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int usbPorts, ram, price, ssd;
+	bool hasSSD = false;
+	std::cout << "Enter price: ";
+	std::cin >> price;
+	std::cout << "Enter ram: ";
+	std::cin >> ram;
+	std::cout << "Enter usb ports: ";
+	std::cin >> usbPorts;
+	std::cout << "Enter whether it has SSD or not. 0 if it does not have and 1 if it has: ";
+	std::cin >> ssd;
+	hasSSD = ssd == 1 ? true : false;
+	bool priceIsInRange = price > 1000 & price < 1500;
+	bool hasExpensiveLaptop = ((usbPorts >= 3) && (ram >= 8) && (hasSSD = true) && priceIsInRange);
+	bool hasCheaperLaptop = ((hasSSD = false) && (ram < 8) && (price < 800));
+	bool willBuyIt = hasCheaperLaptop || hasExpensiveLaptop;
+
+	if (willBuyIt)
+	{
+		std::cout << "He will buy the laptop.";
+	}
+	else
+	{
+		std::cout << "He will not buy a laptop.";
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
