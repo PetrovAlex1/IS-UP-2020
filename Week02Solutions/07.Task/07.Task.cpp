@@ -1,20 +1,30 @@
-// 07.Task.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int number;
+	std::cin >> number;
+	int firstDigit = number / 1000;
+	int secondDigit = (number / 100) % 10;
+	int thirdDigit = (number % 100) / 10;
+	int fourthDigit = number % 1000;
+	bool isOdd = firstDigit % 2 != 0;
+	bool isTheLargest = (firstDigit > secondDigit) && (firstDigit > thirdDigit) && (firstDigit > fourthDigit);
+
+	if (isOdd)
+	{
+		std::cout << "The first digit is odd." << std::endl;
+	}
+	else
+	{
+		std::cout << "The first digit is even." << std::endl;
+	}
+	if (isTheLargest)
+	{
+		std::cout << "The first digit is the largest." << std::endl;;
+	}
+	else
+	{
+		std::cout << "The first digit is not the largest." << std::endl;
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
