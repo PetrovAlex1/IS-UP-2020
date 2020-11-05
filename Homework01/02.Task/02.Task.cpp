@@ -1,20 +1,61 @@
-// 02.Task.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <cmath>
+
+void FindDegree(int number, int degree, int n)
+{
+	int currentDegreedNumber = 1;
+	int previousDegreedNumber = 1;
+
+	while (true)
+	{
+		degree++;
+		currentDegreedNumber *= n;
+
+		if (abs(number - previousDegreedNumber) == abs(number - currentDegreedNumber))
+		{
+			std::cout << number << " -> " << degree - 1 << ", " << degree;
+			break;
+		}
+		else if (abs(number - previousDegreedNumber) < abs(number - currentDegreedNumber))
+		{
+			std::cout << number << " -> " << degree - 1;
+			break;
+		}
+
+		previousDegreedNumber = currentDegreedNumber;
+	}
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int num, degree = 0;
+	bool isSquare = true;
+	std::cin >> num;
+	int n = num;
+
+	while (num > 0)
+	{
+		if (num % 2 == 0)
+		{
+			num /= 2;
+		}
+		else if (num == 1)
+		{
+			break;
+		}
+		else
+		{
+			isSquare = false;
+			break;
+		}
+	}
+
+	if (isSquare)
+	{
+		FindDegree(n, degree, 3);
+	}
+	else
+	{
+		FindDegree(n, degree, 5);
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
