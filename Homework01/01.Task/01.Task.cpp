@@ -79,7 +79,7 @@ int main()
 
 	CheckDate(day, month, year);
 
-	switch (month)
+	switch (month)//add day
 	{
 	case 4:
 	case 6:
@@ -122,8 +122,8 @@ int main()
 			day = 1;
 		}
 		break;
-	case 2:
-		if (CheckYear(year))//if is leap
+	case 2://for february
+		if (CheckYear(year))//if year is leap
 		{
 			if (day < 29)
 			{
