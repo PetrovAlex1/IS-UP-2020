@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-void FindDegree(int number, int degree, int n)
+void FindDegree(int number, int degree, int n)//find the closest degree to the number
 {
 	int currentDegreedNumber = 1;
 	int previousDegreedNumber = 1;
@@ -28,18 +28,18 @@ void FindDegree(int number, int degree, int n)
 
 int main()
 {
-	int num, degree = 0;
+	int number, degree = 0;
 	bool isSquare = true;
-	std::cin >> num;
-	int n = num;
+	std::cin >> number;
+	int n = number;
 
-	while (num > 0)
+	while (number > 0)//check if the number is degree of 2
 	{
-		if (num % 2 == 0)
+		if (number % 2 == 0)
 		{
-			num /= 2;
+			number /= 2;
 		}
-		else if (num == 1)
+		else if (number == 1)
 		{
 			break;
 		}
@@ -58,4 +58,6 @@ int main()
 	{
 		FindDegree(n, degree, 5);
 	}
+
+	return 0;
 }
