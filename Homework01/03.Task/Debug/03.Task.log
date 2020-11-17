@@ -1,0 +1,16 @@
+﻿  03.Task.cpp
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(17,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(20,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(23,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(26,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(29,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(32,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(35,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(38,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(41,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(44,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(47,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(50,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(53,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\C++\IS-UP-2020\Homework01\03.Task\03.Task.cpp(56,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  03.Task.vcxproj -> D:\C++\IS-UP-2020\Homework01\Debug\03.Task.exe
