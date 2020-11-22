@@ -53,7 +53,7 @@ Difficulty DeterminDifficulty(std::string difficulty)
 	}
 }
 
-void RealezeGame(std::string difficulty)
+void GameStart(std::string difficulty)
 {
 	std::string states[8] = { "up", "left", "down", "right", "front", "back", "center", "everywhere" };
 	std::string statesToCheck[8];
@@ -128,7 +128,7 @@ void RealezeGame(std::string difficulty)
 	if (areEqual)
 	{
 		points++;
-		std::cout << "Congrats! That's correct! You have" << points <<   " point up to now. Continue? (Yes/No)" << std::endl;
+		std::cout << "Congrats! That's correct! You have" << points << " point up to now. Continue? (Yes/No)" << std::endl;
 		std::string answer;
 		std::cin >> answer;
 
@@ -137,7 +137,7 @@ void RealezeGame(std::string difficulty)
 			std::string newDifficulty;
 			std::cin >> newDifficulty;
 
-			RealezeGame(newDifficulty);
+			GameStart(newDifficulty);
 		}
 	}
 	else
@@ -151,6 +151,5 @@ int main()
 	std::string difficulty;
 	std::cin >> difficulty;
 
-	RealezeGame(difficulty);
-
+	GameStart(difficulty);
 }
