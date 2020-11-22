@@ -1,20 +1,50 @@
-// 02.Task.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+int ConvertDecimalToBinary(int number)
+{
+	int result = 0, binaryResult[16], reminder, i = 0;
+
+	while (number > 0)//convert from decimal to binary
+	{
+		reminder = number % 2;
+		binaryResult[i] = reminder;
+		i++;
+		number /= 2;
+	}
+	for (int j = 0; j < i / 2; j++)//reverse the result to get the real decimal value
+	{
+		int temp = binaryResult[j];
+		binaryResult[j] = binaryResult[i - j - 1];
+		binaryResult[i - j - 1] = temp;
+	}
+
+	result += binaryResult[0];
+
+	for (int j = 1; j < i; j++)
+	{
+		result = (result * 10) + binaryResult[j];
+	}
+
+	return result;
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int n, numbers[32], decimalSum = 0, binarySum = 0;
+	double decimalAvarage = 0, binaryAvarage = 0;
+	std::cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cin >> numbers[i];
+		decimalSum += numbers[i];
+		std::cout << ConvertDecimalToBinary(numbers[i]) << std::endl;
+	}
+
+	binarySum = ConvertDecimalToBinary(decimalSum);
+	decimalAvarage = decimalSum / n;
+	binaryAvarage = ConvertDecimalToBinary(decimalAvarage);
+
+	std::cout << decimalSum << std::endl << binarySum << std::endl << decimalAvarage << std::endl << binaryAvarage;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
