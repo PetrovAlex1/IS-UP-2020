@@ -152,4 +152,6 @@ int main()
 	std::cin >> difficulty;
 
 	GameStart(difficulty);
+
+	return 0;
 }
