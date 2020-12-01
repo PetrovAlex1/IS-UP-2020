@@ -47,4 +47,6 @@ int main()
 	binaryAvarage = ConvertDecimalToBinary(decimalAvarage);
 
 	std::cout << decimalSum << std::endl << binarySum << std::endl << decimalAvarage << std::endl << binaryAvarage;
+
+	return 0;
 }
