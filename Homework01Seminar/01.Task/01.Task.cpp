@@ -1,5 +1,23 @@
 #include <iostream>
 
+enum class Order
+{
+	ascending,
+	descending
+};
+
+Order DeterminOrder(std::string order)
+{
+	if (order == "ascending")
+	{
+		return Order::ascending;
+	}
+	else
+	{
+		return Order::descending;
+	}
+}
+
 int main()
 {
 	int n, array[32];
@@ -12,8 +30,9 @@ int main()
 	}
 
 	std::cin >> sortType;
+	Order orderID = DeterminOrder(sortType);
 
-	if (sortType == "ascending")
+	if (orderID == Order::ascending)
 	{
 		for (int i = 0; i < n; i++)
 		{
@@ -28,7 +47,7 @@ int main()
 			}
 		}
 	}
-	else
+	else if (orderID == Order::descending)
 	{
 		for (int i = 0; i < n; i++)
 		{

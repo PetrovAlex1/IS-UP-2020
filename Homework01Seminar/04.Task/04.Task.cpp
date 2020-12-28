@@ -199,7 +199,7 @@ int main()
 	std::cout << "Cubic matrix is saved.";
 	std::cout << std::endl;
 
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		std::string actionToDo;
 		std::cout << "Enter what action you want to calculate: ";
