@@ -1,20 +1,73 @@
-// 02.Task.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
-int main()
+int* MergeArr(int* leftArr, int* rightArr)
 {
-    std::cout << "Hello World!\n";
+	int leftCounter = 0;
+	int rightCounter = 0;
+	int* arr = new int[sizeof(leftArr) + sizeof(rightArr)];
+
+	for (int i = 0; i < sizeof(arr); i++)
+	{
+		if (rightCounter == sizeof(rightCounter) || ((leftCounter < sizeof(leftArr)) && (leftArr[leftCounter] <= rightArr[rightCounter])))
+		{
+			arr[i] = leftArr[leftCounter];
+			leftCounter++;
+		}
+		else if (leftCounter == sizeof(leftArr) || ((rightCounter < sizeof(rightCounter)) && (leftArr[leftCounter] >= rightArr[rightCounter])))
+		{
+			arr[i] = rightArr[rightCounter];
+			rightCounter++;
+		}
+	}
+
+	return arr;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int* MergeSort(int* arr)
+{
+	if (sizeof(arr) == 1)
+	{
+		return arr;
+	}
+	int size = sizeof(arr) / sizeof(arr[0]);
+	int middle = size / 2;
+	int* leftArr = new int[middle];
+	int* rightArr = new int[sizeof(arr) - middle];
+
+	for (int i = 0; i < middle; i++)
+	{
+		leftArr[i] = arr[i];
+	}
+
+	int j = 0;
+
+	for (int i = middle; i < sizeof(arr); i++)
+	{
+		rightArr[j] = arr[i];
+		j++;
+	}
+
+	leftArr = MergeSort(leftArr);
+	rightArr = MergeSort(rightArr);
+
+	int* newArr = MergeArr(leftArr, rightArr);
+
+	return newArr;
+}
+
+int main() //Not Done 
+{
+	int* arr = new int[6]{ 6, 1, 11, 9, 3, 21 };
+
+	arr = MergeSort(arr);
+
+	for (int i = 0; i < sizeof(arr); i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+
+	delete[] arr;
+	return 0;
+}
+
